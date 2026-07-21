@@ -29,8 +29,8 @@ color:#fff;
 }
 
 img{
-max-width:100%;
 display:block;
+max-width:100%;
 }
 
 header{
@@ -38,10 +38,10 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-background:rgba(0,0,0,.85);
+background:rgba(0,0,0,.88);
 backdrop-filter:blur(12px);
-z-index:999;
 border-bottom:1px solid rgba(212,175,55,.2);
+z-index:1000;
 }
 
 header .container{
@@ -52,18 +52,25 @@ padding:18px 0;
 }
 
 .logo{
-font-size:30px;
-font-family:'Cormorant Garamond',serif;
-font-weight:700;
-color:#d4af37;
 display:flex;
 flex-direction:column;
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+font-weight:700;
+color:#d4af37;
 }
 
 .logo span{
 font-size:12px;
-color:#ddd;
 letter-spacing:2px;
+color:#ddd;
+}
+
+.menu-toggle{
+display:none;
+font-size:28px;
+color:#d4af37;
+cursor:pointer;
 }
 
 nav ul{
@@ -74,7 +81,6 @@ gap:30px;
 
 nav ul li a{
 transition:.3s;
-font-size:15px;
 }
 
 nav ul li a:hover{
@@ -83,9 +89,13 @@ color:#d4af37;
 
 .icons{
 display:flex;
-gap:20px;
+gap:18px;
 font-size:18px;
+}
+
+.icons i{
 cursor:pointer;
+transition:.3s;
 }
 
 .icons i:hover{
@@ -94,16 +104,16 @@ color:#d4af37;
 
 .hero{
 height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 background:
 linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
 url("assets/images/hero.jpg.jpeg");
 background-size:cover;
 background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
 }
 
 .hero-content{
@@ -111,7 +121,7 @@ max-width:700px;
 }
 
 .hero h1{
-font-size:65px;
+font-size:64px;
 font-family:'Cormorant Garamond',serif;
 color:#d4af37;
 margin-bottom:20px;
@@ -119,7 +129,7 @@ margin-bottom:20px;
 
 .hero p{
 font-size:20px;
-color:#eee;
+color:#ddd;
 margin-bottom:35px;
 }
 
@@ -166,13 +176,13 @@ border:1px solid rgba(212,175,55,.25);
 border-radius:18px;
 overflow:hidden;
 text-align:center;
-transition:.4s;
+transition:.35s;
 }
 
 .product-card:hover{
 transform:translateY(-10px);
-box-shadow:0 15px 35px rgba(212,175,55,.2);
 border-color:#d4af37;
+box-shadow:0 15px 35px rgba(212,175,55,.2);
 }
 
 .product-card img{
@@ -184,22 +194,21 @@ object-fit:cover;
 .product-card h3{
 font-size:28px;
 font-family:'Cormorant Garamond',serif;
-margin:20px 0 10px;
 color:#d4af37;
+margin:20px 0 10px;
 }
 
 .product-card p{
-color:#bbb;
 padding:0 20px;
+color:#bbb;
 font-size:15px;
 }
 
 .product-card span{
 display:block;
+margin:18px 0;
 font-size:24px;
 font-weight:600;
-margin:18px 0;
-color:#fff;
 }
 
 .product-btn{
@@ -218,7 +227,7 @@ background:#fff;
 transform:scale(1.05);
 }
 /* ===========================
-   ABOUT SECTION
+   ABOUT
 =========================== */
 
 .about{
@@ -236,17 +245,17 @@ margin-bottom:60px;
 
 .about-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
 
 .about-card{
 background:#111;
 padding:40px 25px;
-text-align:center;
 border:1px solid rgba(212,175,55,.25);
 border-radius:18px;
-transition:.4s;
+text-align:center;
+transition:.35s;
 }
 
 .about-card:hover{
@@ -262,13 +271,14 @@ margin-bottom:20px;
 }
 
 .about-card h3{
-font-size:26px;
-margin-bottom:12px;
+font-size:28px;
 font-family:'Cormorant Garamond',serif;
+margin-bottom:15px;
 }
 
 .about-card p{
 color:#bbb;
+line-height:1.8;
 }
 
 /* ===========================
@@ -292,8 +302,8 @@ margin-bottom:25px;
 max-width:850px;
 margin:auto;
 font-size:18px;
-color:#ccc;
 line-height:1.9;
+color:#ccc;
 }
 
 /* ===========================
@@ -301,21 +311,22 @@ line-height:1.9;
 =========================== */
 
 footer{
-background:#000;
-border-top:1px solid rgba(212,175,55,.2);
 padding:60px 20px;
 text-align:center;
+background:#000;
+border-top:1px solid rgba(212,175,55,.2);
 }
 
 footer h2{
 font-size:40px;
-color:#d4af37;
 font-family:'Cormorant Garamond',serif;
+color:#d4af37;
+margin-bottom:10px;
 }
 
 footer p{
-margin:10px 0;
 color:#aaa;
+margin:10px 0;
 }
 
 .social{
@@ -340,33 +351,59 @@ background:#d4af37;
 color:#000;
 }
 /* ===========================
-   RESPONSIVE DESIGN
+   MOBILE RESPONSIVE
 =========================== */
 
-@media (max-width:992px){
-
-.hero h1{
-font-size:50px;
-}
-
-nav ul{
-gap:18px;
-}
-
+.mobile-overlay{
+display:none;
 }
 
 @media (max-width:768px){
 
 header .container{
-flex-direction:column;
-gap:15px;
 padding:15px 0;
 }
 
+.menu-toggle{
+display:block;
+z-index:1001;
+}
+
+.icons{
+display:none;
+}
+
+nav{
+position:fixed;
+top:0;
+right:-100%;
+width:280px;
+height:100vh;
+background:#000;
+padding:100px 30px;
+transition:.4s ease;
+border-left:1px solid rgba(212,175,55,.2);
+z-index:1000;
+}
+
+nav.active{
+right:0;
+}
+
 nav ul{
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+flex-direction:column;
+gap:25px;
+}
+
+.mobile-overlay.active{
+display:block;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+z-index:999;
 }
 
 .hero{
@@ -420,11 +457,11 @@ height:240px;
 }
 
 /* ===========================
-   ANIMATIONS
+   ANIMATION
 =========================== */
 
 .hero-content{
-animation:fadeUp 1.2s ease;
+animation:fadeUp 1s ease;
 }
 
 .product-card,
@@ -442,60 +479,6 @@ transform:translateY(40px);
 100%{
 opacity:1;
 transform:translateY(0);
-}
-
-}
-/* Mobile Menu */
-
-.menu-toggle{
-display:none;
-font-size:28px;
-color:#d4af37;
-cursor:pointer;
-z-index:1001;
-}
-
-.mobile-overlay{
-display:none;
-}
-
-@media (max-width:768px){
-
-.menu-toggle{
-display:block;
-}
-
-nav{
-position:fixed;
-top:0;
-right:-100%;
-width:280px;
-height:100vh;
-background:#000;
-padding:100px 30px;
-transition:.4s;
-z-index:1000;
-}
-
-nav.active{
-right:0;
-}
-
-nav ul{
-flex-direction:column;
-align-items:flex-start;
-gap:25px;
-}
-
-.mobile-overlay.active{
-display:block;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.6);
-z-index:999;
 }
 
 }
