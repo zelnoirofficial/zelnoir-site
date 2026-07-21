@@ -137,3 +137,311 @@ transition:.3s;
 background:#fff;
 transform:translateY(-3px);
 }
+/* ===========================
+   PRODUCTS
+=========================== */
+
+#products{
+padding:100px 0;
+background:#050505;
+}
+
+#products h2{
+text-align:center;
+font-size:48px;
+font-family:'Cormorant Garamond',serif;
+color:#d4af37;
+margin-bottom:60px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.product-card{
+background:#111;
+border:1px solid rgba(212,175,55,.25);
+border-radius:18px;
+overflow:hidden;
+text-align:center;
+transition:.4s;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 35px rgba(212,175,55,.2);
+border-color:#d4af37;
+}
+
+.product-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.product-card h3{
+font-size:28px;
+font-family:'Cormorant Garamond',serif;
+margin:20px 0 10px;
+color:#d4af37;
+}
+
+.product-card p{
+color:#bbb;
+padding:0 20px;
+font-size:15px;
+}
+
+.product-card span{
+display:block;
+font-size:24px;
+font-weight:600;
+margin:18px 0;
+color:#fff;
+}
+
+.product-btn{
+display:inline-block;
+margin-bottom:25px;
+padding:12px 30px;
+background:#d4af37;
+color:#000;
+font-weight:600;
+border-radius:30px;
+transition:.3s;
+}
+
+.product-btn:hover{
+background:#fff;
+transform:scale(1.05);
+}
+/* ===========================
+   ABOUT SECTION
+=========================== */
+
+.about{
+padding:100px 0;
+background:#0b0b0b;
+}
+
+.about h2{
+text-align:center;
+font-size:48px;
+font-family:'Cormorant Garamond',serif;
+color:#d4af37;
+margin-bottom:60px;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.about-card{
+background:#111;
+padding:40px 25px;
+text-align:center;
+border:1px solid rgba(212,175,55,.25);
+border-radius:18px;
+transition:.4s;
+}
+
+.about-card:hover{
+transform:translateY(-10px);
+border-color:#d4af37;
+box-shadow:0 15px 35px rgba(212,175,55,.2);
+}
+
+.about-card i{
+font-size:45px;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.about-card h3{
+font-size:26px;
+margin-bottom:12px;
+font-family:'Cormorant Garamond',serif;
+}
+
+.about-card p{
+color:#bbb;
+}
+
+/* ===========================
+   STORY
+=========================== */
+
+.story{
+padding:100px 20px;
+text-align:center;
+background:#050505;
+}
+
+.story h2{
+font-size:48px;
+font-family:'Cormorant Garamond',serif;
+color:#d4af37;
+margin-bottom:25px;
+}
+
+.story p{
+max-width:850px;
+margin:auto;
+font-size:18px;
+color:#ccc;
+line-height:1.9;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+background:#000;
+border-top:1px solid rgba(212,175,55,.2);
+padding:60px 20px;
+text-align:center;
+}
+
+footer h2{
+font-size:40px;
+color:#d4af37;
+font-family:'Cormorant Garamond',serif;
+}
+
+footer p{
+margin:10px 0;
+color:#aaa;
+}
+
+.social{
+margin:25px 0;
+}
+
+.social a{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:50px;
+height:50px;
+border:1px solid #d4af37;
+border-radius:50%;
+margin:0 8px;
+font-size:20px;
+transition:.3s;
+}
+
+.social a:hover{
+background:#d4af37;
+color:#000;
+}
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+
+@media (max-width:992px){
+
+.hero h1{
+font-size:50px;
+}
+
+nav ul{
+gap:18px;
+}
+
+}
+
+@media (max-width:768px){
+
+header .container{
+flex-direction:column;
+gap:15px;
+padding:15px 0;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.hero{
+padding-top:120px;
+height:auto;
+min-height:100vh;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+#products h2,
+.about h2,
+.story h2{
+font-size:36px;
+}
+
+.product-card img{
+height:280px;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero h1{
+font-size:30px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.logo{
+font-size:24px;
+}
+
+.btn{
+padding:12px 28px;
+}
+
+.product-card img{
+height:240px;
+}
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+.hero-content{
+animation:fadeUp 1.2s ease;
+}
+
+.product-card,
+.about-card{
+animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
