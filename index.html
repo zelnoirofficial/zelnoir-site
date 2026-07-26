@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelnoir - Luxury Perfumes</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
 
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="assets/images/logo.png.jpeg" alt="Zelnoir Logo" class="brand-logo">
+            <span>ZELNOIR</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#products">Collection</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('assets/images/hero.jpg.jpeg');">
+        <div class="hero-content">
+            <h1>Experience Pure Luxury</h1>
+            <p>Discover the signature collection of exquisite fragrances crafted for elegance.</p>
+            <a href="#products" class="btn-primary">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2>Our Exclusive Fragrances</h2>
+        <div class="product-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="assets/images/midnight-1.jpg.jpeg" alt="Midnight Elixir">
+                <h3>Midnight Elixir</h3>
+                <p class="price">₹1,999</p>
+                <button class="btn-buy" onclick="startPayment('Midnight Elixir', 1999)">Buy Now</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="assets/images/royaloud-1.jpg.jpeg" alt="Royal Oud">
+                <h3>Royal Oud</h3>
+                <p class="price">₹2,499</p>
+                <button class="btn-buy" onclick="startPayment('Royal Oud', 2499)">Buy Now</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="assets/images/signature-1.jpg.jpeg" alt="Signature Scent">
+                <h3>Signature Noir</h3>
+                <p class="price">₹2,199</p>
+                <button class="btn-buy" onclick="startPayment('Signature Noir', 2199)">Buy Now</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="assets/images/velvet-1.jpg.jpeg" alt="Velvet Bloom">
+                <h3>Velvet Bloom</h3>
+                <p class="price">₹1,799</p>
+                <button class="btn-buy" onclick="startPayment('Velvet Bloom', 1799)">Buy Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact / Footer Section -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h3>ZELNOIR PERFUMES</h3>
+            <p>Email: <a href="mailto:zelnoirofficial@gmail.com">zelnoirofficial@gmail.com</a></p>
+            <p>Instagram: <a href="https://instagram.com/zelnoir.official" target="_blank">@zelnoir.official</a></p>
+            <p>WhatsApp: <a href="https://wa.me/917017966468" target="_blank">+91 7017966468</a></p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zelnoir Perfumes. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs & Script -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
