@@ -6,17 +6,17 @@
     <title>ZELNOIR | Luxury Fragrances</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #ffffff; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .hero-bg { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/hero.jpg'); background-size: cover; background-position: center; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navbar -->
     <nav class="max-w-6xl mx-auto p-6 flex justify-between items-center">
         <h1 class="text-3xl font-bold text-yellow-600 tracking-tighter">ZELNOIR</h1>
+        <div class="space-x-4 text-sm text-gray-300">
+            <a href="#shop" class="hover:text-yellow-600">Shop</a>
+            <a href="#contact" class="hover:text-yellow-600">Contact</a>
+        </div>
     </nav>
 
     <!-- Hero -->
@@ -28,12 +28,13 @@
 
     <!-- Products -->
     <section id="shop" class="max-w-6xl mx-auto py-20 px-6">
+        <h3 class="text-3xl text-center mb-12 text-yellow-600">Our Exclusive Fragrances</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             <!-- 1. Signature -->
             <div class="bg-zinc-900 p-4 border border-zinc-800 hover:border-yellow-600 transition">
                 <img src="assets/images/signature-1.jpg" class="w-full h-64 object-cover mb-4">
-                <h3 class="text-xl">ZELNOIR Signature</h3>
+                <h3 class="text-xl font-bold">ZELNOIR Signature</h3>
                 <p class="text-xs text-gray-500 mb-4">Dior Sauvage Elixir DNA</p>
                 <button onclick="placeOrder('ZELNOIR Signature', 1499)" class="w-full py-2 bg-zinc-800 hover:bg-yellow-600 transition">Buy Now</button>
             </div>
@@ -41,7 +42,7 @@
             <!-- 2. Royal Oud -->
             <div class="bg-zinc-900 p-4 border border-zinc-800 hover:border-yellow-600 transition">
                 <img src="assets/images/royaloud-1.jpg" class="w-full h-64 object-cover mb-4">
-                <h3 class="text-xl">ZELNOIR Royal Oud</h3>
+                <h3 class="text-xl font-bold">ZELNOIR Royal Oud</h3>
                 <p class="text-xs text-gray-500 mb-4">Initio Oud For Greatness DNA</p>
                 <button onclick="placeOrder('ZELNOIR Royal Oud', 1999)" class="w-full py-2 bg-zinc-800 hover:bg-yellow-600 transition">Buy Now</button>
             </div>
@@ -49,7 +50,7 @@
             <!-- 3. Midnight -->
             <div class="bg-zinc-900 p-4 border border-zinc-800 hover:border-yellow-600 transition">
                 <img src="assets/images/midnight-1.jpg" class="w-full h-64 object-cover mb-4">
-                <h3 class="text-xl">ZELNOIR Midnight</h3>
+                <h3 class="text-xl font-bold">ZELNOIR Midnight</h3>
                 <p class="text-xs text-gray-500 mb-4">Rasasi Hawas DNA</p>
                 <button onclick="placeOrder('ZELNOIR Midnight', 1299)" class="w-full py-2 bg-zinc-800 hover:bg-yellow-600 transition">Buy Now</button>
             </div>
@@ -57,46 +58,28 @@
             <!-- 4. Velvet -->
             <div class="bg-zinc-900 p-4 border border-zinc-800 hover:border-yellow-600 transition">
                 <img src="assets/images/velvet-1.jpg" class="w-full h-64 object-cover mb-4">
-                <h3 class="text-xl">ZELNOIR Velvet</h3>
+                <h3 class="text-xl font-bold">ZELNOIR Velvet</h3>
                 <p class="text-xs text-gray-500 mb-4">Khamrah Qahwa DNA</p>
                 <button onclick="placeOrder('ZELNOIR Velvet', 1599)" class="w-full py-2 bg-zinc-800 hover:bg-yellow-600 transition">Buy Now</button>
             </div>
         </div>
     </section>
 
-    <!-- Firebase + Razorpay Integration -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-zinc-950 border-t border-zinc-900 py-12 px-6 text-center">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <h3 class="text-2xl text-yellow-600 font-bold">ZELNOIR OFFICIAL</h3>
+            <p class="text-gray-400 text-sm">Get in touch with us for orders and inquiries.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8 text-sm text-gray-300">
+                <p>📞 WhatsApp: <a href="https://wa.me/917017966468" class="text-yellow-600 hover:underline">+91 70179 66468</a></p>
+                <p>📸 Instagram: <a href="https://instagram.com/zelnoir.official" target="_blank" class="text-yellow-600 hover:underline">@zelnoir.official</a></p>
+                <p>✉️ Email: <a href="mailto:zelnoirofficial@gmail.com" class="text-yellow-600 hover:underline">zelnoirofficial@gmail.com</a></p>
+            </div>
+            <p class="text-xs text-gray-600 pt-6">&copy; 2026 ZELNOIR. All rights reserved.</p>
+        </div>
+    </footer>
 
-        // Firebase Config (Aapke screenshot se)
-        const firebaseConfig = {
-            apiKey: "AizaSyDDVs@yUQ232I-9LRGHYK1_s...", 
-            projectId: "zelnoir",
-            appId: "1:256419040591:web:03779ce4975fa50ee3493e"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        // Order Function
-        window.placeOrder = async (itemName, price) => {
-            alert("Initiating payment for " + itemName + " at ₹" + price);
-            
-            // Yahan Razorpay ka Logic aayega
-            // Firebase me Order Save karna:
-            try {
-                await addDoc(collection(db, "orders"), {
-                    product: itemName,
-                    price: price,
-                    status: "Pending Payment",
-                    timestamp: new Date()
-                });
-                console.log("Order recorded in Firebase!");
-            } catch (e) {
-                console.error("Error adding document: ", e);
-            }
-        }
-    </script>
+    <!-- Script File Linking -->
+    <script type="module" src="script.js"></script>
 </body>
 </html>
