@@ -1,30 +1,24 @@
-// script.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-// Firebase Configuration
 const firebaseConfig = {
     apiKey: "AizaSyDDVs@yUQ232I-9LRGHYK1_s...",
     projectId: "zelnoir",
     appId: "1:256419040591:web:03779ce4975fa50ee3493e"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Razorpay Payment Function
 window.payWithRazorpay = function(itemName, price) {
     var options = {
-        "rzp_live_TQA2gB0AQIEYo0
+        "key": "Rzp_live_TQA2gB0AQIEYo0", 
         "amount": price * 100, 
         "currency": "INR",
         "name": "ZELNOIR",
         "description": "Purchase of " + itemName,
         "handler": async function (response) {
-            alert("Payment Successful! Order Confirmed.");
-            
-            // Firebase me Order Save karna
+            alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
             try {
                 await addDoc(collection(db, "orders"), {
                     item: itemName,
