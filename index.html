@@ -1,56 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZELNOIR | Official</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Razorpay Checkout Script -->
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ZELNOIR — The Art of Presence</title>
+
+  <meta
+    name="description"
+    content="ZELNOIR — The Art of Presence. Discover your signature fragrance."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1 style="text-align:center; padding: 25px; color: #ca8a04; font-family: serif; letter-spacing: 2px;">ZELNOIR</h1>
+  <!-- TOP ANNOUNCEMENT -->
+  <div class="announcement">
+    FREE SHIPPING • SECURE CHECKOUT • COD AVAILABLE
+  </div>
 
-    <div class="product-grid">
-        <!-- 1. Signature -->
-        <div class="card">
-            <img src="assets/images/signature-1.jpg" alt="ZELNOIR Signature">
-            <h3 style="margin-top: 15px;">ZELNOIR Signature</h3>
-            <p style="font-size: 12px; color: #888; margin: 5px 0 15px 0;">Dior Sauvage Elixir DNA</p>
-            <button class="btn" onclick="payWithRazorpay('ZELNOIR Signature', 1499)">Buy Now</button>
-        </div>
 
-        <!-- 2. Royal Oud -->
-        <div class="card">
-            <img src="assets/images/royaloud-1.jpg" alt="ZELNOIR Royal Oud">
-            <h3 style="margin-top: 15px;">ZELNOIR Royal Oud</h3>
-            <p style="font-size: 12px; color: #888; margin: 5px 0 15px 0;">Initio Oud For Greatness DNA</p>
-            <button class="btn" onclick="payWithRazorpay('ZELNOIR Royal Oud', 1999)">Buy Now</button>
-        </div>
+  <!-- HEADER -->
+  <header class="header">
 
-        <!-- 3. Midnight -->
-        <div class="card">
-            <img src="assets/images/midnight-1.jpg" alt="ZELNOIR Midnight">
-            <h3 style="margin-top: 15px;">ZELNOIR Midnight</h3>
-            <p style="font-size: 12px; color: #888; margin: 5px 0 15px 0;">Rasasi Hawas DNA</p>
-            <button class="btn" onclick="payWithRazorpay('ZELNOIR Midnight', 1299)">Buy Now</button>
-        </div>
+    <a href="#home" class="brand">
+      <img src="assets/images/logo.png" alt="ZELNOIR">
+    </a>
 
-        <!-- 4. Velvet -->
-        <div class="card">
-            <img src="assets/images/velvet-1.jpg" alt="ZELNOIR Velvet">
-            <h3 style="margin-top: 15px;">ZELNOIR Velvet</h3>
-            <p style="font-size: 12px; color: #888; margin: 5px 0 15px 0;">Khamrah Qahwa DNA</p>
-            <button class="btn" onclick="payWithRazorpay('ZELNOIR Velvet', 1599)">Buy Now</button>
-        </div>
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-button" id="cartBtn">
+      BAG
+      <span id="cartCount">0</span>
+    </button>
+
+  </header>
+
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+
+    <button class="mobile-close" id="mobileClose">
+      ×
+    </button>
+
+    <a href="#home">Home</a>
+    <a href="#collection">Collection</a>
+    <a href="#story">Our Story</a>
+    <a href="#contact">Contact</a>
+
+  </div>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          ZELNOIR
+        </p>
+
+        <h1>
+          The Art of
+          <br>
+          <em>Presence.</em>
+        </h1>
+
+        <p class="hero-description">
+          Fragrance created to leave an impression
+          before you say a word.
+        </p>
+
+        <a href="#collection" class="primary-button">
+          EXPLORE COLLECTION
+        </a>
+
+      </div>
+
+
+      <div class="hero-image">
+
+        <img
+          src="assets/images/hero.jpg"
+          alt="ZELNOIR fragrance"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="intro">
+
+      <p class="eyebrow">
+        THE ZELNOIR SIGNATURE
+      </p>
+
+      <h2>
+        Wear the moment.
+        <br>
+        <em>Own the presence.</em>
+      </h2>
+
+      <p>
+        Refined fragrances for evenings, encounters
+        and every moment worth remembering.
+      </p>
+
+    </section>
+
+
+    <!-- COLLECTION -->
+    <section class="collection" id="collection">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          THE COLLECTION
+        </p>
+
+        <h2>
+          Find your signature.
+        </h2>
+
+      </div>
+
+
+      <!-- PRODUCTS WILL COME FROM JAVASCRIPT -->
+      <div
+        class="products-grid"
+        id="products"
+      ></div>
+
+    </section>
+
+
+    <!-- STORY -->
+    <section class="story" id="story">
+
+      <div class="story-image">
+
+        <img
+          src="assets/images/midnight-2.jpg"
+          alt="ZELNOIR Midnight"
+        >
+
+      </div>
+
+
+      <div class="story-content">
+
+        <p class="eyebrow">
+          OUR STORY
+        </p>
+
+        <h2>
+          Presence is
+          <br>
+          <em>remembered.</em>
+        </h2>
+
+        <p>
+          ZELNOIR was created around one idea:
+          fragrance should become part of your identity.
+          Every composition is designed to feel modern,
+          memorable and unmistakably yours.
+        </p>
+
+        <p class="story-signature">
+          THE ART OF PRESENCE
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- TRUST -->
+    <section class="trust-section">
+
+      <div class="trust-item">
+
+        <strong>
+          Authentic
+        </strong>
+
+        <span>
+          Original ZELNOIR fragrances
+        </span>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <strong>
+          Secure
+        </strong>
+
+        <span>
+          Razorpay protected payments
+        </span>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <strong>
+          Convenient
+        </strong>
+
+        <span>
+          Online Payment + Cash on Delivery
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+      <p class="eyebrow">
+        CONTACT
+      </p>
+
+      <h2>
+        Make your presence
+        <br>
+        <em>unforgettable.</em>
+      </h2>
+
+      <p>
+        For product, order or collaboration enquiries,
+        contact ZELNOIR.
+      </p>
+
+      <a
+        href="mailto:hello@zelnoir.in"
+        class="primary-button dark-button"
+      >
+        EMAIL ZELNOIR
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      ZELNOIR
     </div>
 
-    <footer style="text-align:center; padding: 40px; color: #888; font-size: 14px;">
-        <p>WhatsApp: 7017966468 | Instagram: @zelnoir.official</p>
-        <p style="margin-top: 5px; font-size: 12px; color: #555;">&copy; 2026 ZELNOIR. All rights reserved.</p>
-    </footer>
+    <div>
+      THE ART OF PRESENCE
+    </div>
 
-    <script type="module" src="script.js"></script>
+    <div>
+      © <span id="year"></span> ZELNOIR
+    </div>
+
+  </footer>
+
+
+  <!-- CART MODAL -->
+  <div
+    class="modal hidden"
+    id="cartModal"
+  >
+
+    <div class="modal-box">
+
+      <button
+        class="close-button"
+        id="closeCart"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow">
+        YOUR BAG
+      </p>
+
+      <h2>
+        Your selection.
+      </h2>
+
+      <div id="cartItems"></div>
+
+      <div class="cart-total">
+
+        <span>
+          TOTAL
+        </span>
+
+        <strong id="cartTotal">
+          ₹0
+        </strong>
+
+      </div>
+
+      <button
+        class="primary-button full-button"
+        id="checkoutBtn"
+      >
+        CHECKOUT
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- CHECKOUT MODAL -->
+  <div
+    class="modal hidden"
+    id="checkoutModal"
+  >
+
+    <div class="modal-box">
+
+      <button
+        class="close-button"
+        id="closeCheckout"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow">
+        CHECKOUT
+      </p>
+
+      <h2>
+        Your details.
+      </h2>
+
+
+      <form id="checkoutForm">
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          required
+        >
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Mobile Number"
+          inputmode="numeric"
+          pattern="[0-9]{10}"
+          maxlength="10"
+          required
+        >
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          required
+        >
+
+        <textarea
+          name="address"
+          placeholder="Full Delivery Address"
+          required
+        ></textarea>
+
+        <input
+          type="text"
+          name="pincode"
+          placeholder="Pincode"
+          inputmode="numeric"
+          pattern="[0-9]{6}"
+          maxlength="6"
+          required
+        >
+
+
+        <div class="payment-options">
+
+          <label>
+            <input
+              type="radio"
+              name="payment"
+              value="online"
+              checked
+            >
+
+            Pay Online
+          </label>
+
+
+          <label>
+            <input
+              type="radio"
+              name="payment"
+              value="cod"
+            >
+
+            Cash on Delivery
+          </label>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="primary-button full-button"
+          id="placeOrderBtn"
+        >
+          PLACE ORDER
+        </button>
+
+
+        <p class="checkout-note">
+          Your payment is securely processed.
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- NOTIFICATION -->
+  <div
+    class="toast"
+    id="toast"
+  ></div>
+
+
+  <!-- RAZORPAY -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <!-- WEBSITE SCRIPT -->
+  <script src="script.js"></script>
+
 </body>
 </html>
