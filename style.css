@@ -1,20 +1,1068 @@
-/* style.css */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: #000; color: #fff; font-family: sans-serif; }
+/* =====================================================
+   ZELNOIR — THE ART OF PRESENCE
+   MOBILE FIRST LUXURY DESIGN
+===================================================== */
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0b0b;
+  color: #f5f1e8;
+  font-family: "Inter", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+
+/* =====================================================
+   ANNOUNCEMENT
+===================================================== */
+
+.announcement {
+  width: 100%;
+  background: #d6c09a;
+  color: #111;
+  text-align: center;
+  padding: 9px 12px;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+  height: 70px;
+  width: 100%;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #0b0b0b;
+  border-bottom: 1px solid #292929;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  width: 105px;
+  max-height: 42px;
+  object-fit: contain;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.cart-button {
+  border: 1px solid #555;
+  background: transparent;
+  color: #fff;
+
+  padding: 9px 13px;
+
+  border-radius: 30px;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+}
+
+.cart-button span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  margin-left: 5px;
+
+  border-radius: 50%;
+
+  background: #d6c09a;
+  color: #111;
+
+  font-size: 9px;
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+
+  background: #111;
+
+  z-index: 200;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 30px;
+
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 38px;
+}
+
+.mobile-close {
+  position: absolute;
+
+  top: 20px;
+  right: 22px;
+
+  background: none;
+  border: none;
+
+  color: #fff;
+
+  font-size: 38px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  min-height: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #111;
+}
+
+.hero-image {
+  width: 100%;
+  height: 55vh;
+
+  order: -1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.hero-content {
+  padding: 65px 25px 75px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  color: #d6c09a;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin-top: 15px;
+  margin-bottom: 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(58px, 18vw, 90px);
+
+  font-weight: 500;
+
+  line-height: 0.88;
+}
+
+.hero h1 em {
+  color: #d6c09a;
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 370px;
+
+  color: #a8a8a8;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  min-height: 48px;
+
+  padding: 0 22px;
+
+  margin-top: 18px;
+
+  background: #f5f1e8;
+  color: #111;
+
+  border: none;
+
+  text-decoration: none;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+}
+
+.dark-button {
+  background: #111;
+  color: #f5f1e8;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+  background: #f5f1e8;
+  color: #111;
+
+  text-align: center;
+
+  padding: 90px 22px;
+}
+
+.intro .eyebrow {
+  color: #8d7754;
+}
+
+.intro h2 {
+  margin: 18px 0 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(47px, 14vw, 75px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+}
+
+.intro h2 em {
+  color: #9c8052;
+}
+
+.intro > p:last-child {
+  max-width: 480px;
+
+  margin: auto;
+
+  color: #666;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   COLLECTION
+===================================================== */
+
+.collection {
+  padding: 80px 18px;
+  background: #0b0b0b;
+}
+
+.section-heading {
+  margin-bottom: 38px;
+}
+
+.section-heading h2 {
+  margin-top: 15px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 13vw, 70px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+}
+
+
+/* =====================================================
+   PRODUCT GRID
+===================================================== */
+
+.products-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+.product {
+  background: #151515;
+
+  border: 1px solid #272727;
+
+  overflow: hidden;
+}
+
+.product-image {
+  aspect-ratio: 0.82;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 15px 12px 17px;
+}
+
+.product-info h3 {
+  margin: 7px 0 6px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 26px;
+
+  font-weight: 500;
+}
+
+.product-info p {
+  color: #929292;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+.product-price {
+  margin-top: 10px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.buy-button {
+  width: 100%;
+
+  margin-top: 14px;
+
+  padding: 12px 5px;
+
+  background: #f5f1e8;
+  color: #111;
+
+  border: none;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   STORY
+===================================================== */
+
+.story {
+  display: flex;
+  flex-direction: column;
+
+  background: #171717;
+}
+
+.story-image {
+  width: 100%;
+  height: 55vh;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.story-content {
+  padding: 70px 25px 80px;
+}
+
+.story-content h2 {
+  margin: 15px 0 28px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(52px, 15vw, 75px);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+}
+
+.story-content h2 em {
+  color: #d6c09a;
+}
+
+.story-content > p:not(.eyebrow):not(.story-signature) {
+  max-width: 480px;
+
+  color: #999;
+
+  font-size: 13px;
+
+  line-height: 1.9;
+}
+
+.story-signature {
+  margin-top: 30px;
+
+  color: #d6c09a;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   TRUST
+===================================================== */
+
+.trust-section {
+  display: flex;
+  flex-direction: column;
+
+  background: #d6c09a;
+  color: #111;
+
+  padding: 45px 25px;
+
+  gap: 32px;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.trust-item strong {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 28px;
+
+  font-weight: 600;
+}
+
+.trust-item span {
+  color: #5c5141;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+  background: #f5f1e8;
+  color: #111;
+
+  text-align: center;
+
+  padding: 90px 20px;
+}
+
+.contact .eyebrow {
+  color: #8d7754;
+}
+
+.contact h2 {
+  margin: 18px 0 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(47px, 14vw, 75px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+}
+
+.contact h2 em {
+  color: #9c8052;
+}
+
+.contact > p:not(.eyebrow) {
+  color: #666;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  background: #0b0b0b;
+
+  padding: 35px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  color: #777;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+.footer-logo {
+  color: #fff;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+
+  letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   MODALS
+===================================================== */
+
+.modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 500;
+
+  background: rgba(0, 0, 0, 0.82);
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-box {
+  position: relative;
+
+  width: 100%;
+
+  max-height: 92vh;
+
+  overflow-y: auto;
+
+  background: #f5f1e8;
+
+  color: #111;
+
+  padding: 32px 20px 35px;
+
+  border-radius: 18px 18px 0 0;
+}
+
+.modal-box h2 {
+  margin: 12px 0 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 43px;
+
+  font-weight: 500;
+}
+
+.close-button {
+  position: absolute;
+
+  right: 18px;
+  top: 13px;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  background: #111;
+  color: #fff;
+
+  border-radius: 50%;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+.cart-line {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #ddd;
+
+  font-size: 12px;
+}
+
+.cart-line small {
+  color: #777;
+}
+
+.qty {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.qty button {
+  width: 30px;
+  height: 30px;
+
+  background: #fff;
+
+  border: 1px solid #bbb;
+
+  cursor: pointer;
+}
+
+.cart-total {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 20px 0;
+
+  font-size: 14px;
+}
+
+.full-button {
+  width: 100%;
+}
+
+.full-button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   CHECKOUT FORM
+===================================================== */
+
+#checkoutForm {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+#checkoutForm input,
+#checkoutForm textarea {
+  width: 100%;
+
+  padding: 14px;
+
+  border: 1px solid #ccc;
+
+  background: #fff;
+
+  color: #111;
+
+  outline: none;
+
+  font-size: 13px;
+}
+
+#checkoutForm textarea {
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+#checkoutForm input:focus,
+#checkoutForm textarea:focus {
+  border-color: #111;
+}
+
+.payment-options {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  padding: 10px 0;
+
+  font-size: 12px;
+}
+
+.payment-options label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.checkout-note {
+  margin-top: 8px;
+
+  color: #777;
+
+  font-size: 9px;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+  position: fixed;
+
+  left: 50%;
+  bottom: 20px;
+
+  transform: translateX(-50%);
+
+  z-index: 1000;
+
+  background: #d6c09a;
+
+  color: #111;
+
+  padding: 12px 20px;
+
+  border-radius: 30px;
+
+  font-size: 10px;
+
+  display: none;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width: 600px) {
+
+  .header {
+    padding: 0 35px;
+  }
+
+  .hero-content {
+    padding: 80px 8%;
+  }
+
+  .collection {
+    padding: 100px 6%;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+
     gap: 20px;
+  }
+
+  .trust-section {
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    padding: 55px 6%;
+  }
+
+  footer {
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 40px 6%;
+  }
+
+  .modal {
+    align-items: center;
+
     padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+  }
+
+  .modal-box {
+    max-width: 520px;
+
+    border-radius: 5px;
+
+    padding: 40px;
+  }
 }
 
-.card { background: #111; border: 1px solid #333; padding: 15px; text-align: center; border-radius: 8px; }
-.card img { width: 100%; height: 300px; object-fit: cover; border-radius: 5px; }
-.btn { 
-    background: #ca8a04; color: #000; padding: 12px; width: 100%; 
-    border: none; font-weight: bold; cursor: pointer; margin-top: 10px; border-radius: 4px;
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 900px) {
+
+  .header {
+    height: 82px;
+
+    padding: 0 5%;
+  }
+
+  .brand img {
+    width: 130px;
+  }
+
+  .desktop-nav {
+    display: flex;
+
+    gap: 35px;
+  }
+
+  .desktop-nav a {
+    color: #ddd;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s;
+  }
+
+  .desktop-nav a:hover {
+    color: #d6c09a;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .hero {
+    min-height: calc(100vh - 120px);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-image {
+    order: 2;
+
+    height: calc(100vh - 120px);
+  }
+
+  .hero-content {
+    padding: 10%;
+  }
+
+  .hero h1 {
+    font-size: clamp(75px, 8vw, 120px);
+  }
+
+  .intro {
+    padding: 140px 20px;
+  }
+
+  .collection {
+    padding: 130px 5%;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+  }
+
+  .product {
+    transition: transform 0.35s ease;
+  }
+
+  .product:hover {
+    transform: translateY(-6px);
+  }
+
+  .story {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 650px;
+  }
+
+  .story-image {
+    height: auto;
+  }
+
+  .story-content {
+    padding: 12%;
+  }
+
+  .story-content h2 {
+    font-size: 75px;
+  }
+
+  .trust-section {
+    padding: 65px 7%;
+  }
+
+  .contact {
+    padding: 140px 20px;
+  }
+
+  .modal {
+    align-items: center;
+  }
+
+  .modal-box {
+    max-width: 540px;
+
+    border-radius: 5px;
+  }
 }
-.btn:hover { background: #eab308; }
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1200px) {
+
+  .hero-content {
+    padding-left: 12%;
+    padding-right: 10%;
+  }
+
+  .collection {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .products-grid {
+    gap: 24px;
+  }
+}
